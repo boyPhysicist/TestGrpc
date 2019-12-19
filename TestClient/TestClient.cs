@@ -1,8 +1,8 @@
 ﻿using Grpc.Core;
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using CrossCutting;
 using Test;
 
 namespace TestClient
@@ -24,7 +24,7 @@ namespace TestClient
 
                 WriteToConsole($"{Defines.ResultString}{replay.Message}");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -38,7 +38,7 @@ namespace TestClient
                 using (var call = _client.CalculateHuge(request))
                 {
                     var stream = call.ResponseStream;
-                    var resultString = new StringBuilder("Result: ");
+                    var resultString = new StringBuilder(Defines.ResultString);
 
                     while (await stream.MoveNext())
                     {

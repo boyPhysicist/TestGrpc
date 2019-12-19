@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using Grpc.Core;
 using Test;
+using CrossCutting;
 
 namespace TestServer
 {
-    class Program
+    internal class Program
     {
-        static SslServerCredentials GetCerts()
+        private static SslServerCredentials GetCerts()
         {
-            var certsFolder = Path.Combine(Environment.CurrentDirectory, "Certs");
-            var caCert = File.ReadAllText(Path.Combine(certsFolder, "ca.crt"));
-            var cert = File.ReadAllText(Path.Combine(certsFolder, "server.crt"));
-            var key = File.ReadAllText(Path.Combine(certsFolder, "server.key"));
+            var certsFolder = Path.Combine(Environment.CurrentDirectory, Defines.CertificatesFolderName);
+            var caCert = File.ReadAllText(Path.Combine(certsFolder, Defines.CaCertificateName));
+            var cert = File.ReadAllText(Path.Combine(certsFolder, Defines.ServerCertificateName));
+            var key = File.ReadAllText(Path.Combine(certsFolder, Defines.ServerCertificateKeyName));
 
             var certificateCollection = new List<KeyCertificatePair>
             {
@@ -24,7 +25,7 @@ namespace TestServer
             return serverCredentials;
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var cred = GetCerts();
 
@@ -37,7 +38,7 @@ namespace TestServer
             server.Start();
 
             Console.WriteLine($"{Defines.ServerListeningMessage}{Defines.Port}");
-            Console.WriteLine(Defines.PressAnyKeyMessage);
+            Console.WriteLine(Defines.PressAnyKeyServerMessage);
             Console.ReadKey();
 
             server.ShutdownAsync().Wait();

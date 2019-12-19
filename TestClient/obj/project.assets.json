@@ -1375,6 +1375,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CrossCutting.dll": {}
+        }
+      },
       "Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -5447,6 +5457,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../CrossCutting/CrossCutting.csproj",
+      "msbuildProject": "../CrossCutting/CrossCutting.csproj"
+    },
     "Service/1.0.0": {
       "type": "project",
       "path": "../Service/Service.csproj",
@@ -5455,6 +5470,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "CrossCutting >= 1.0.0",
       "Grpc.Auth >= 2.25.0",
       "Grpc.Core >= 2.25.0",
       "Grpc.Core.Api >= 2.25.0",
@@ -5494,6 +5510,9 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
+            "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj"
+            },
             "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj": {
               "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj"
             }

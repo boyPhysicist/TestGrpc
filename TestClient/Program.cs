@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 using Grpc.Core;
 using Test;
+using CrossCutting;
 
 namespace TestClient
 {
@@ -11,10 +11,10 @@ namespace TestClient
     {
         static SslCredentials GetSslCredentials()
         {
-            var certificatePath = Path.Combine(Environment.CurrentDirectory, "Certs");
-            var caCert = File.ReadAllText(Path.Combine(certificatePath, "ca.crt"));
-            var cert = File.ReadAllText(Path.Combine(certificatePath, "client.crt"));
-            var key = File.ReadAllText(Path.Combine(certificatePath, "client.key"));
+            var certificatePath = Path.Combine(Environment.CurrentDirectory, Defines.CertificatesFolderName);
+            var caCert = File.ReadAllText(Path.Combine(certificatePath, Defines.CaCertificateName));
+            var cert = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateName));
+            var key = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateKeyName));
 
             var keyPair = new KeyCertificatePair(cert, key);
             var Creds = new SslCredentials(caCert, keyPair);
@@ -46,7 +46,7 @@ namespace TestClient
             { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }).Wait();
 
             channel.ShutdownAsync().Wait();
-            Console.WriteLine(Defines.PressAnyKeyMessage);
+            Console.WriteLine(Defines.PressAnyKeyСlientMessage);
             Console.ReadKey();
         }
 
