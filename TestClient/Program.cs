@@ -60,16 +60,18 @@ namespace TestClient
 
                 inputString = Console.ReadLine();
 
-                CheckForCorrectString(inputString, out result);
+                CheckForCorrectString(inputString, out _);
+
+                CheckForCorrectInput(inputString, out result);
             }
 
             void CheckForCorrectString(string input, out int value)
             {
-                while (!int.TryParse(inputString, out value))
+                while (!int.TryParse(input, out value))
                 {
                     Console.WriteLine(Defines.WrongDataErrorMessage);
 
-                    inputString = Console.ReadLine();
+                    input = Console.ReadLine();
                 }
             }
         }

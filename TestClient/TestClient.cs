@@ -43,8 +43,11 @@ namespace TestClient
                     while (await stream.MoveNext())
                     {
                         var replay = stream.Current;
+                        WriteToConsole(replay.Message.ToString());
                         resultString.Append($"{replay.Message},");
                     }
+
+                    resultString.Remove(resultString.Length - 1, 1);
 
                     WriteToConsole(resultString.ToString());
                 }
