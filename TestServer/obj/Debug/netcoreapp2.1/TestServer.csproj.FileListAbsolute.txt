@@ -1,0 +1,13 @@
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\TestServer.deps.json
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\TestServer.runtimeconfig.json
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\TestServer.runtimeconfig.dev.json
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\TestServer.dll
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\TestServer.pdb
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\Service.dll
+C:\Users\boyph\source\repos\TestGrpc\TestServer\bin\Debug\netcoreapp2.1\Service.pdb
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.csprojAssemblyReference.cache
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.AssemblyInfoInputs.cache
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.AssemblyInfo.cs
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.csproj.CopyComplete
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.dll
+C:\Users\boyph\source\repos\TestGrpc\TestServer\obj\Debug\netcoreapp2.1\TestServer.pdb
