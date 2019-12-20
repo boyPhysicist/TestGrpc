@@ -5,7 +5,7 @@ using CredKeeper;
 using Grpc.Core;
 using Test;
 using CrossCutting;
-using Environment.EnvSetup;
+using Infrastructure.EnvSetup;
 
 namespace TestClient
 {
@@ -13,15 +13,22 @@ namespace TestClient
     {
         public static void Main(string[] args)
         {
-            var clientFabric = new ClientFactory(new CredProvider());
+            var clientFabric = new ClientServicesFactory(new CredProvider());
 
-            var client = clientFabric.GetSslClient();
+            var client = clientFabric.GetClientServiceWithSsl();
 
             Console.WriteLine(Defines.InputMessage);
 
             var inputString = Console.ReadLine();
 
-            CheckForCorrectInput(inputString, out var result);
+            var result = 0;
+
+            var isInputDataCorrect = false;
+
+            while (!isInputDataCorrect)
+            {
+                isInputDataCorrect = _CheckForCorrectInput(inputString, out result);
+            }
 
             var calcResult = client.Calculate(new Request {Message = result});
 
@@ -37,9 +44,9 @@ namespace TestClient
             Console.ReadKey();
         }
 
-        private static void CheckForCorrectInput(string inputString, out int result)
+        private static bool _CheckForCorrectInput(string inputString, out int result)
         {
-            CheckForCorrectString(inputString, out result);
+            _CheckForCorrectString(inputString, out result);
 
             if (result < 1 || result > 5)
             {
@@ -47,19 +54,19 @@ namespace TestClient
 
                 inputString = Console.ReadLine();
 
-                CheckForCorrectString(inputString, out _);
+                _CheckForCorrectString(inputString, out _);
 
-                CheckForCorrectInput(inputString, out result);
+                _CheckForCorrectInput(inputString, out result);
             }
+        }
 
-            void CheckForCorrectString(string input, out int value)
+        private void _CheckForCorrectString(string input, out int value)
+        {
+            while (!int.TryParse(input, out value))
             {
-                while (!int.TryParse(input, out value))
-                {
-                    Console.WriteLine(Defines.WrongDataErrorMessage);
+                Console.WriteLine(Defines.WrongDataErrorMessage);
 
-                    input = Console.ReadLine();
-                }
+                input = Console.ReadLine();
             }
         }
     }

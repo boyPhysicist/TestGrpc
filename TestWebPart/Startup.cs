@@ -1,5 +1,5 @@
 using CredKeeper;
-using Environment.EnvSetup;
+using Infrastructure.EnvSetup;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +23,7 @@ namespace TestWebPart
         {
             services.AddControllers();
             services.AddSingleton<ICredentialsProvider, CredProvider>();
-            services.AddSingleton<IClientFactory, ClientFactory>();
+            services.AddSingleton<IClientServicesFactory, ClientServicesFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

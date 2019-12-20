@@ -5,7 +5,7 @@ using CredKeeper;
 using Grpc.Core;
 using Test;
 using CrossCutting;
-using Environment.EnvSetup;
+using Infrastructure.EnvSetup;
 
 namespace TestServer
 {
@@ -13,9 +13,9 @@ namespace TestServer
     {
         private static void Main(string[] args)
         {
-            var serverFactory = new ServersFactory(new CredProvider());
+            var serverFactory = new ServersServicesFactory(new CredProvider());
 
-            var server = serverFactory.GetSslServer();
+            var server = serverFactory.GetServerServiceWithSsl();
 
             server.Start();
 

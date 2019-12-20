@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 
-namespace Infrastructure.Models
+namespace Infrastructure.Services
 {
-    public class Server
+    public class ServerService
     {
         private readonly Grpc.Core.Server _server;
 
-        public Server(Grpc.Core.Server server)
+        public ServerService(Grpc.Core.Server server)
         {
             _server = server;
         }

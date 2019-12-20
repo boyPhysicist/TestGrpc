@@ -2,7 +2,7 @@
 using Grpc.Core;
 using Test;
 
-namespace Infrastructure.Models
+namespace Infrastructure.Services
 {
     public class ServiceImpl : TestService.TestServiceBase
     {

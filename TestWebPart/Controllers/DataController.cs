@@ -9,9 +9,9 @@ namespace TestWebPart.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-        private readonly IClientFactory _clientFactory;
+        private readonly IClientServicesFactory _clientFactory;
 
-        public DataController(IClientFactory clientFactory)
+        public DataController(IClientServicesFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }

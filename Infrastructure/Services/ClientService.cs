@@ -6,15 +6,15 @@ using CrossCutting;
 using Grpc.Core;
 using Test;
 
-namespace Infrastructure.Models
+namespace Infrastructure.Services
 {
-    public class Client
+    public class ClientService
     {
         private readonly TestService.TestServiceClient _client;
 
         public Channel ClientChannel { get; private set; }
 
-        public Client(TestService.TestServiceClient client, Channel channel)
+        public ClientService(TestService.TestServiceClient client, Channel channel)
         {
             _client = client;
             ClientChannel = channel;
@@ -54,7 +54,6 @@ namespace Infrastructure.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
                 return e.ToString();
             }
         }

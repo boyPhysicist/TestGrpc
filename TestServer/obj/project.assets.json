@@ -404,24 +404,6 @@
           "bin/placeholder/CrossCutting.dll": {}
         }
       },
-      "Environment/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CrossCutting": "1.0.0",
-          "Infrastructure": "1.0.0",
-          "Service": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Environment.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Environment.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -455,7 +437,10 @@
         },
         "runtime": {
           "bin/placeholder/Service.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -1032,11 +1017,6 @@
       "path": "../CrossCutting/CrossCutting.csproj",
       "msbuildProject": "../CrossCutting/CrossCutting.csproj"
     },
-    "Environment/1.0.0": {
-      "type": "project",
-      "path": "../Enviroment/Environment.csproj",
-      "msbuildProject": "../Enviroment/Environment.csproj"
-    },
     "Infrastructure/1.0.0": {
       "type": "project",
       "path": "../Infrastructure/Infrastructure.csproj",
@@ -1052,7 +1032,6 @@
     ".NETCoreApp,Version=v3.1": [
       "CredKeeper >= 1.0.0",
       "CrossCutting >= 1.0.0",
-      "Environment >= 1.0.0",
       "Service >= 1.0.0"
     ]
   },
@@ -1092,9 +1071,6 @@
             },
             "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj": {
               "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj"
-            },
-            "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Enviroment\\Environment.csproj": {
-              "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Enviroment\\Environment.csproj"
             },
             "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj": {
               "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj"

@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CredKeeper\CredKeeper.csproj" />
     <ProjectReference Include="..\CrossCutting\CrossCutting.csproj" />
-    <ProjectReference Include="..\Enviroment\Environment.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 
