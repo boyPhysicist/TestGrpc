@@ -1,0 +1,15 @@
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\CredKeeper.deps.json
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\CredKeeper.dll
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\CredKeeper.pdb
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\CrossCutting.dll
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\CrossCutting.pdb
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.csprojAssemblyReference.cache
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.AssemblyInfoInputs.cache
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.AssemblyInfo.cs
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.csproj.CopyComplete
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.dll
+C:\Users\boyph\source\repos\TestGrpc\CredKeeper\obj\Debug\netcoreapp3.1\CredKeeper.pdb

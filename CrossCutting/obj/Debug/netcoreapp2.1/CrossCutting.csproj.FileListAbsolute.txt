@@ -1,0 +1,7 @@
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\bin\Debug\netcoreapp2.1\CrossCutting.deps.json
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\bin\Debug\netcoreapp2.1\CrossCutting.dll
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\bin\Debug\netcoreapp2.1\CrossCutting.pdb
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp2.1\CrossCutting.AssemblyInfoInputs.cache
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp2.1\CrossCutting.AssemblyInfo.cs
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp2.1\CrossCutting.dll
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp2.1\CrossCutting.pdb

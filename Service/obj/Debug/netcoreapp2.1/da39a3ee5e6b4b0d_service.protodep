@@ -1,2 +1,5 @@
 obj\Debug\netcoreapp2.1/Service.cs \
-obj\Debug\netcoreapp2.1/ServiceGrpc.cs: service.proto
+obj\Debug\netcoreapp2.1/ServiceGrpc.cs: http.proto\
+ descriptor.proto\
+ annotations.proto\
+ service.proto

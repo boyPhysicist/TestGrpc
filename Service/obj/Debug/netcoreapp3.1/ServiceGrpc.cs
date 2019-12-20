@@ -14,11 +14,26 @@ namespace Test {
 
     static readonly grpc::Marshaller<global::Test.Request> __Marshaller_test_Request = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Test.Request.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Test.Reply> __Marshaller_test_Reply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Test.Reply.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Test.HugeRequest> __Marshaller_test_HugeRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Test.HugeRequest.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Test.Request, global::Test.Reply> __Method_Calculate = new grpc::Method<global::Test.Request, global::Test.Reply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "Calculate",
+        __Marshaller_test_Request,
+        __Marshaller_test_Reply);
+
+    static readonly grpc::Method<global::Test.HugeRequest, global::Test.Reply> __Method_CalculateHuge = new grpc::Method<global::Test.HugeRequest, global::Test.Reply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "CalculateHuge",
+        __Marshaller_test_HugeRequest,
+        __Marshaller_test_Reply);
+
+    static readonly grpc::Method<global::Test.Request, global::Test.Reply> __Method_CalculateApi = new grpc::Method<global::Test.Request, global::Test.Reply>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CalculateApi",
         __Marshaller_test_Request,
         __Marshaller_test_Reply);
 
@@ -33,6 +48,16 @@ namespace Test {
     public abstract partial class TestServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Test.Reply> Calculate(global::Test.Request request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task CalculateHuge(global::Test.HugeRequest request, grpc::IServerStreamWriter<global::Test.Reply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Test.Reply> CalculateApi(global::Test.Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -78,6 +103,30 @@ namespace Test {
       {
         return CallInvoker.AsyncUnaryCall(__Method_Calculate, null, options, request);
       }
+      public virtual grpc::AsyncServerStreamingCall<global::Test.Reply> CalculateHuge(global::Test.HugeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CalculateHuge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::Test.Reply> CalculateHuge(global::Test.HugeRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_CalculateHuge, null, options, request);
+      }
+      public virtual global::Test.Reply CalculateApi(global::Test.Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CalculateApi(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Test.Reply CalculateApi(global::Test.Request request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CalculateApi, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Test.Reply> CalculateApiAsync(global::Test.Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CalculateApiAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Test.Reply> CalculateApiAsync(global::Test.Request request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CalculateApi, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override TestServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -90,7 +139,9 @@ namespace Test {
     public static grpc::ServerServiceDefinition BindService(TestServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Calculate, serviceImpl.Calculate).Build();
+          .AddMethod(__Method_Calculate, serviceImpl.Calculate)
+          .AddMethod(__Method_CalculateHuge, serviceImpl.CalculateHuge)
+          .AddMethod(__Method_CalculateApi, serviceImpl.CalculateApi).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -100,6 +151,8 @@ namespace Test {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, TestServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Calculate, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Test.Request, global::Test.Reply>(serviceImpl.Calculate));
+      serviceBinder.AddMethod(__Method_CalculateHuge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Test.HugeRequest, global::Test.Reply>(serviceImpl.CalculateHuge));
+      serviceBinder.AddMethod(__Method_CalculateApi, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Test.Request, global::Test.Reply>(serviceImpl.CalculateApi));
     }
 
   }

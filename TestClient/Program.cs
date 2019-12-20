@@ -1,51 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CredKeeper;
 using Grpc.Core;
 using Test;
 using CrossCutting;
+using Environment.EnvSetup;
 
 namespace TestClient
 {
     class Program
     {
-        static SslCredentials GetSslCredentials()
-        {
-            var certificatePath = Path.Combine(Environment.CurrentDirectory, Defines.CertificatesFolderName);
-            var caCert = File.ReadAllText(Path.Combine(certificatePath, Defines.CaCertificateName));
-            var cert = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateName));
-            var key = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateKeyName));
-
-            var keyPair = new KeyCertificatePair(cert, key);
-            var Creds = new SslCredentials(caCert, keyPair);
-            return Creds;
-        }
-
         public static void Main(string[] args)
         {
-            var channelOptions = new List<ChannelOption>
-            {
-                new ChannelOption(ChannelOptions.SslTargetNameOverride, Defines.PcName)
-            };
+            var clientFabric = new ClientFactory(new CredProvider());
 
-            var channelCredentials = GetSslCredentials();
+            var client = clientFabric.GetSslClient();
 
-           var channel = new Channel(Defines.PcName, 50051, channelCredentials, channelOptions);
+            Console.WriteLine(Defines.InputMessage);
 
-           var client = new TestClient(new TestService.TestServiceClient(channel)); 
+            var inputString = Console.ReadLine();
 
-           Console.WriteLine(Defines.InputMessage);
+            CheckForCorrectInput(inputString, out var result);
 
-           var inputString = Console.ReadLine();
+            var calcResult = client.Calculate(new Request {Message = result});
 
-           CheckForCorrectInput(inputString, out var result);
+            Console.WriteLine(calcResult);
 
-           client.Calculate(new Request {Message = result});
+            var calcHugeResult = client.CalculateHuge(new HugeRequest
+                { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }).Result;
 
-           client.CalculateHuge(new HugeRequest
-            { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }).Wait();
+            Console.WriteLine(calcHugeResult);
 
-            channel.ShutdownAsync().Wait();
+            client.ClientChannel.ShutdownAsync().Wait();
             Console.WriteLine(Defines.PressAnyKeyСlientMessage);
             Console.ReadKey();
         }

@@ -8,8 +8,10 @@ package test;
 service TestService{
 	rpc Calculate(Request) returns (Reply){}
 	rpc CalculateHuge(HugeRequest) returns(stream Reply){}
+
+	rpc CalculateApi(Request) returns (Reply){}
 	}
-	
+
 message Request {
 	int32 message = 1;
 }

@@ -25,14 +25,18 @@ namespace Test {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1zZXJ2aWNlLnByb3RvEgR0ZXN0IhoKB1JlcXVlc3QSDwoHbWVzc2FnZRgB",
-            "IAEoBSIYCgVSZXBseRIPCgdtZXNzYWdlGAEgASgFMjgKC1Rlc3RTZXJ2aWNl",
-            "EikKCUNhbGN1bGF0ZRINLnRlc3QuUmVxdWVzdBoLLnRlc3QuUmVwbHkiAEIZ",
-            "CgR0ZXN0QglUZXN0UHJvdG9QAaICA1RTVGIGcHJvdG8z"));
+            "IAEoBSIYCgVSZXBseRIPCgdtZXNzYWdlGAEgASgFIh4KC0h1Z2VSZXF1ZXN0",
+            "Eg8KB21lc3NhZ2UYFCADKAUymwEKC1Rlc3RTZXJ2aWNlEikKCUNhbGN1bGF0",
+            "ZRINLnRlc3QuUmVxdWVzdBoLLnRlc3QuUmVwbHkiABIzCg1DYWxjdWxhdGVI",
+            "dWdlEhEudGVzdC5IdWdlUmVxdWVzdBoLLnRlc3QuUmVwbHkiADABEiwKDENh",
+            "bGN1bGF0ZUFwaRINLnRlc3QuUmVxdWVzdBoLLnRlc3QuUmVwbHkiAEIZCgR0",
+            "ZXN0QglUZXN0UHJvdG9QAaICA1RTVGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Test.Request), global::Test.Request.Parser, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Test.Reply), global::Test.Reply.Parser, new[]{ "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Test.Reply), global::Test.Reply.Parser, new[]{ "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Test.HugeRequest), global::Test.HugeRequest.Parser, new[]{ "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -289,6 +293,128 @@ namespace Test {
             break;
           case 8: {
             Message = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class HugeRequest : pb::IMessage<HugeRequest> {
+    private static readonly pb::MessageParser<HugeRequest> _parser = new pb::MessageParser<HugeRequest>(() => new HugeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<HugeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Test.ServiceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HugeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HugeRequest(HugeRequest other) : this() {
+      message_ = other.message_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HugeRequest Clone() {
+      return new HugeRequest(this);
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 20;
+    private static readonly pb::FieldCodec<int> _repeated_message_codec
+        = pb::FieldCodec.ForInt32(162);
+    private readonly pbc::RepeatedField<int> message_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Message {
+      get { return message_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as HugeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(HugeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!message_.Equals(other.message_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= message_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      message_.WriteTo(output, _repeated_message_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += message_.CalculateSize(_repeated_message_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(HugeRequest other) {
+      if (other == null) {
+        return;
+      }
+      message_.Add(other.message_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 162:
+          case 160: {
+            message_.AddEntriesFrom(input, _repeated_message_codec);
             break;
           }
         }
