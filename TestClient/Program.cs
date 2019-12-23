@@ -16,9 +16,7 @@ namespace TestClient
 
             Console.WriteLine(Defines.InputMessage);
 
-            var inputString = Console.ReadLine();
-
-            var result = _CheckForCorrectInput(inputString);
+            var result = _GetInputData();
 
             var calcResult = clientService.Calculate(new Request {Message = result});
 
@@ -34,29 +32,32 @@ namespace TestClient
             Console.ReadKey();
         }
 
-        private static int _CheckForCorrectInput(string inputString)
+        private static int _GetInputData()
         {
-            int result;
+            var result = 0;
 
-            while (true)
+            var isInputCorrect = false;
+
+            while (!isInputCorrect)
             {
-                while (!int.TryParse(inputString, out result))
+                var inputString = Console.ReadLine();
+
+                var isIntValue = int.TryParse(inputString, out result);
+
+                if (!isIntValue)
                 {
                     Console.WriteLine(Defines.WrongDataErrorMessage);
-
-                    inputString = Console.ReadLine();
+                    continue;
                 }
 
                 if (result < 0)
                 {
                     Console.WriteLine(Defines.WrongValueErrorMessage);
-
-                    inputString = Console.ReadLine();
-
                     continue;
                 }
 
-                break;
+                isInputCorrect = true;
+
             }
 
             return result;
