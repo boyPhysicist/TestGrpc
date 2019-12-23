@@ -4,78 +4,6 @@
     "C:\\Users\\boyph\\source\\repos\\TestGrpc\\TestServer\\TestServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj",
-        "projectName": "CredKeeper",
-        "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj",
-        "packagesPath": "C:\\Users\\boyph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\boyph\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj"
-              },
-              "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "dependencies": {
-            "Grpc.Core": {
-              "target": "Package",
-              "version": "[2.25.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -318,11 +246,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj": {
-                "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj"
-              },
               "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj": {
                 "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CrossCutting\\CrossCutting.csproj"
+              },
+              "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj"
               },
               "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj": {
                 "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Service\\Service.csproj"

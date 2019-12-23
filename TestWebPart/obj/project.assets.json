@@ -2128,24 +2128,6 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "CredKeeper/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CrossCutting": "1.0.0",
-          "Grpc.Core": "2.25.0",
-          "Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CredKeeper.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CredKeeper.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "CrossCutting/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -6956,11 +6938,6 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "CredKeeper/1.0.0": {
-      "type": "project",
-      "path": "../CredKeeper/CredKeeper.csproj",
-      "msbuildProject": "../CredKeeper/CredKeeper.csproj"
-    },
     "CrossCutting/1.0.0": {
       "type": "project",
       "path": "../CrossCutting/CrossCutting.csproj",
@@ -6979,7 +6956,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CredKeeper >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.0"
@@ -7016,9 +6992,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj": {
-              "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\CredKeeper\\CredKeeper.csproj"
-            },
             "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj": {
               "projectPath": "C:\\Users\\boyph\\source\\repos\\TestGrpc\\Infrastructure\\Infrastructure.csproj"
             }

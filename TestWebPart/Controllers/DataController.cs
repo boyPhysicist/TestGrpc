@@ -17,9 +17,9 @@ namespace TestWebPart.Controllers
         }
 
         [HttpGet]
-        public int Get(int param)
+        public string Get(int param)
         {
-            var client = _clientFactory.GetSslClient();
+            var client = _clientFactory.GetClientServiceWithSsl();
 
             return client.Calculate(new Request { Message = param });
         }
@@ -28,7 +28,7 @@ namespace TestWebPart.Controllers
         [HttpGet]
         public async Task<string> GetHuge()
         {
-            var client = _clientFactory.GetSslClient();
+            var client = _clientFactory.GetClientServiceWithSsl();
 
             var result = await client.CalculateHuge(new HugeRequest(new HugeRequest
                 { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }));

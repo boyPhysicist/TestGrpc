@@ -7,6 +7,5 @@ namespace Infrastructure.Interfaces
     {
         SslCredentials GetSslClientCredentials();
         SslServerCredentials GetSslServerCredentials();
-        List<ChannelOption> GetClientChannelOptions(Dictionary<string, string> options);
     }
 }

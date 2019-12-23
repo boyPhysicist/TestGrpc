@@ -5,23 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="bin\Debug\netcoreapp3.1\Certs\ca.crt" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\ca.key" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.crt" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.csr" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.key" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\server.crt" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\server.csr" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\server.key" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Grpc.Core" Version="2.25.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CrossCutting\CrossCutting.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.1\" />
   </ItemGroup>
 
 </Project>

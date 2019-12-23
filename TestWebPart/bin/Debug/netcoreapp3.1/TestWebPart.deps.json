@@ -24,8 +24,6 @@
     ".NETCoreApp,Version=v3.1": {
       "TestWebPart/1.0.0": {
         "dependencies": {
-          "CredKeeper": "1.0.0",
-          "Environment": "1.0.0",
           "Infrastructure": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.0",
@@ -1793,38 +1791,12 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "CredKeeper/1.0.0": {
-        "dependencies": {
-          "CrossCutting": "1.0.0",
-          "Grpc.Core": "2.25.0",
-          "Infrastructure": "1.0.0"
-        },
-        "runtime": {
-          "CredKeeper.dll": {}
-        },
-        "compile": {
-          "CredKeeper.dll": {}
-        }
-      },
       "CrossCutting/1.0.0": {
         "runtime": {
           "CrossCutting.dll": {}
         },
         "compile": {
           "CrossCutting.dll": {}
-        }
-      },
-      "Environment/1.0.0": {
-        "dependencies": {
-          "CrossCutting": "1.0.0",
-          "Infrastructure": "1.0.0",
-          "Service": "1.0.0"
-        },
-        "runtime": {
-          "Environment.dll": {}
-        },
-        "compile": {
-          "Environment.dll": {}
         }
       },
       "Infrastructure/1.0.0": {
@@ -4465,17 +4437,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "CredKeeper/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "CrossCutting/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Environment/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

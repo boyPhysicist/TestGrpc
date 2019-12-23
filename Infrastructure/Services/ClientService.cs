@@ -12,7 +12,7 @@ namespace Infrastructure.Services
     {
         private readonly TestService.TestServiceClient _client;
 
-        public Channel ClientChannel { get; private set; }
+        public Channel ClientChannel { get; }
 
         public ClientService(TestService.TestServiceClient client, Channel channel)
         {
@@ -20,17 +20,17 @@ namespace Infrastructure.Services
             ClientChannel = channel;
         }
 
-        public int Calculate(Request request)
+        public string Calculate(Request request)
         {
             try
             {
                 var replay = _client.Calculate(request);
 
-                return replay.Message;
+                return replay.Message.ToString();
             }
             catch (Exception e)
             {
-                return 0;
+                return e.ToString();
             }
         }
 

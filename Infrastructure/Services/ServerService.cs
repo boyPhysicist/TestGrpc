@@ -11,12 +11,12 @@ namespace Infrastructure.Services
             _server = server;
         }
 
-        public void Start()
+        public void StartServer()
         {
             _server.Start();
         }
 
-        public async Task ShutdownAsync()
+        public async Task ShutdownServerAsync()
         {
             await _server.ShutdownAsync();
         }

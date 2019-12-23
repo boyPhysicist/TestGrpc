@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using CredKeeper;
-using Grpc.Core;
-using Test;
 using CrossCutting;
 using Infrastructure.EnvSetup;
+using Infrastructure.Providers;
 
 namespace TestServer
 {
@@ -17,13 +13,13 @@ namespace TestServer
 
             var server = serverFactory.GetServerServiceWithSsl();
 
-            server.Start();
+            server.StartServer();
 
             Console.WriteLine($"{Defines.ServerListeningMessage}{Defines.Port}");
             Console.WriteLine(Defines.PressAnyKeyServerMessage);
             Console.ReadKey();
 
-            server.ShutdownAsync().Wait();
+            server.ShutdownServerAsync().Wait();
         }
     }
 }
