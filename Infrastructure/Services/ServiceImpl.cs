@@ -19,7 +19,7 @@ namespace Infrastructure.Services
             }
         }
 
-        private Reply Calculate(int value)
+        private Reply Calculate(long value)
         {
             var result = 0;
 

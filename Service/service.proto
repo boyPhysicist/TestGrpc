@@ -13,13 +13,13 @@ service TestService{
 	}
 
 message Request {
-	int32 message = 1;
+	int64 message = 1;
 }
 
 message Reply {
-	int32 message = 1;
+	int64 message = 1;
 }
 
 message HugeRequest{
-	repeated int32 message = 20;
+	repeated int64 message = 20;
 }
