@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using CrossCutting;
 using Grpc.Core;
 using Infrastructure.Interfaces;
@@ -12,11 +11,9 @@ namespace Infrastructure.Providers
     {
         public SslCredentials GetSslClientCredentials()
         {
-            var certificatePath = Path.Combine(Environment.CurrentDirectory, Defines.CertificatesFolderName);
-
-            var caCert = File.ReadAllText(Path.Combine(certificatePath, Defines.CaCertificateName));
-            var cert = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateName));
-            var key = File.ReadAllText(Path.Combine(certificatePath, Defines.ClientCertificateKeyName));
+            var caCert = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.CaCertificateName));
+            var cert = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.ClientCertificateName));
+            var key = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.ClientCertificateKeyName));
             var keyPair = new KeyCertificatePair(cert, key);
             var credentials = new SslCredentials(caCert, keyPair);
             return credentials;
@@ -24,10 +21,9 @@ namespace Infrastructure.Providers
 
         public SslServerCredentials GetSslServerCredentials()
         {
-            var certsFolder = Path.Combine(Environment.CurrentDirectory, Defines.CertificatesFolderName);
-            var caCert = File.ReadAllText(Path.Combine(certsFolder, Defines.CaCertificateName));
-            var cert = File.ReadAllText(Path.Combine(certsFolder, Defines.ServerCertificateName));
-            var key = File.ReadAllText(Path.Combine(certsFolder, Defines.ServerCertificateKeyName));
+            var caCert = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.CaCertificateName));
+            var cert = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.ServerCertificateName));
+            var key = File.ReadAllText(Path.Combine(Defines.CertFolderPath, Defines.ServerCertificateKeyName));
 
             var certificateCollection = new List<KeyCertificatePair>
             {

@@ -15,12 +15,13 @@ namespace CrossCutting
         public const string PressAnyKeyСlientMessage = "Press any key to exit...";
         public const string WrongValueErrorMessage = "Value must be from 1 to 5. Please, enter correct value.";
         public const string WrongDataErrorMessage = "Enter correct data, please";
-        public const string CertificatesFolderName = "Certs";
         public const string CaCertificateName = "ca.crt";
         public const string ClientCertificateName = "client.crt";
         public const string ClientCertificateKeyName = "client.key";
         public const string ServerCertificateName = "server.crt";
         public const string ServerCertificateKeyName = "server.key";
+
+        public static string CertFolderPath = @"../../../../Certs/";
 
         public const int Port = 50051;
 

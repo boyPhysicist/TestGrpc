@@ -21,16 +21,4 @@
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Certs\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="bin\Debug\netcoreapp3.1\Certs\ca.crt" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\ca.key" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.crt" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.csr" />
-    <None Include="bin\Debug\netcoreapp3.1\Certs\client.key" />
-  </ItemGroup>
-
 </Project>

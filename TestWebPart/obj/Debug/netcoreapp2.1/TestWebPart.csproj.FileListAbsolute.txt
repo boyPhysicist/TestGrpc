@@ -1,3 +1,0 @@
-C:\Users\boyph\source\repos\TestGrpc\TestWebPart\obj\Debug\netcoreapp2.1\TestWebPart.csprojAssemblyReference.cache
-C:\Users\boyph\source\repos\TestGrpc\TestWebPart\obj\Debug\netcoreapp2.1\TestWebPart.AssemblyInfoInputs.cache
-C:\Users\boyph\source\repos\TestGrpc\TestWebPart\obj\Debug\netcoreapp2.1\TestWebPart.AssemblyInfo.cs
