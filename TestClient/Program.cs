@@ -47,7 +47,7 @@ namespace TestClient
                     inputString = Console.ReadLine();
                 }
 
-                if (result < 1 || result > 5)
+                if (result < 0)
                 {
                     Console.WriteLine(Defines.WrongValueErrorMessage);
 
