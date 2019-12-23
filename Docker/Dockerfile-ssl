@@ -1,0 +1,5 @@
+FROM envoyproxy/envoy:latest
+COPY ./envoyssl.yaml /etc/envoy/envoy.yaml
+COPY ./server.crt /etc/envoy/server.crt
+COPY ./server.key /etc/envoy/server.key
+CMD /usr/local/bin/envoy -c /etc/envoy/envoy.yaml

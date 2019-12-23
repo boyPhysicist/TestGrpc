@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+
+  envoynossl:
+    image: envoyproxy/envoy:latest
+    command: /usr/local/bin/envoy -c /etc/envoy.yaml
+    volumes:
+      - ./envoy.yaml:/etc/envoy.yaml
+    expose:
+      - "8080"
+      - "9901"
+    ports:
+      - "1234:8080"
+      - "9901:9901"
+      
+

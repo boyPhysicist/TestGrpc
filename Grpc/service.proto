@@ -1,0 +1,25 @@
+﻿syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "test";
+option java_outer_classname = "TestProto";
+option objc_class_prefix = "TST";
+package test;
+
+service TestService{
+	rpc Calculate(Request) returns (Reply){}
+	rpc CalculateHuge(HugeRequest) returns(stream Reply){}
+
+	rpc CalculateApi(Request) returns (Reply){}
+	}
+
+message Request {
+	int64 message = 1;
+}
+
+message Reply {
+	int64 message = 1;
+}
+
+message HugeRequest{
+	repeated int64 message = 20;
+}
