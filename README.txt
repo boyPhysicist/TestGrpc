@@ -15,3 +15,13 @@ Self-sign client certificate: openssl x509 -passin pass:1111 -req -days 365 -in 
 Remove passphrase from client key: openssl rsa -passin pass:1111 -in client.key -out client.key
 
 or try to use cert.bat
+
+For proxy and web usage docker and node.js musy be installed.
+
+docker-compouse up - from Docker folder location for docker container setup.
+
+protoc -I=. service.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.  -  Generating grps files for web
+
+npx webpack client.js --mode development - For web part build
+
+Attantion!!!!! web part works only without SSL for now. You need to change method for serverService getting at TestServer proj.
