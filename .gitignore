@@ -11,9 +11,6 @@
 *.sln.docstates
 
 _ReSharper.*
-bin
-obj
-packages
 
 # Build results
 [Dd]ebug/
@@ -28,8 +25,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-netcoreapp2.1/
-netcoreapp3.1/
+[Nn]etcoreapp2.1/
+[Nn]etcoreapp3.1/
+
+*.csproj.FileListAbsolute.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

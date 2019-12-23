@@ -5,3 +5,4 @@ C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp3.1\CrossC
 C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.AssemblyInfo.cs
 C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.dll
 C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.pdb
+C:\Users\boyph\source\repos\TestGrpc\CrossCutting\obj\Debug\netcoreapp3.1\CrossCutting.csprojAssemblyReference.cache
