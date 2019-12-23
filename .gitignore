@@ -28,6 +28,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+netcoreapp2.1/
+netcoreapp3.1/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
