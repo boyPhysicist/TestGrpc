@@ -8,18 +8,18 @@ namespace Infrastructure.Services
     {
         public override Task<Reply> Calculate(Request request, ServerCallContext context)
         {
-            return Task.FromResult(Calculate(request.Message));
+            return Task.FromResult(_Calculate(request.Message));
         }
 
         public override async Task CalculateHuge(HugeRequest request, IServerStreamWriter<Reply> responseStream, ServerCallContext context)
         {
             foreach (var value in request.Message)
             {
-                await responseStream.WriteAsync(Calculate(value));
+                await responseStream.WriteAsync(_Calculate(value));
             }
         }
 
-        private Reply Calculate(long value)
+        private Reply _Calculate(long value)
         {
             var result = 0;
 

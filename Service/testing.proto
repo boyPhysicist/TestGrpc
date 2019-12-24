@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Service";
+
+package Test;
+
+service Tester{
+	rpc SingleReplayTest(SingleRequest) returns (SingleReplay);
+	rpc MultipleReplayTest(SingleRequest) returns (stream SingleReplay);
+	rpc MultipleRequestTest(stream SingleRequest) returns (SingleReplay);
+	rpc MultipleRequestReplayTest(stream SingleRequest) returns (SingleReplay);
+}
+
+message SingleRequest{
+	string value = 1;
+}
+
+message SingleReplay{
+	string value = 1;
+}

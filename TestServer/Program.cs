@@ -11,7 +11,7 @@ namespace TestServer
         {
             var serverFactory = new ServersServicesFactory(new CredProvider());
 
-            var server = serverFactory.GetServerServiceWithSsl();
+            var server = serverFactory.GetServerServerServiceWithoutSsl();
 
             server.StartServer();
 

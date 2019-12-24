@@ -5,7 +5,8 @@ var client = new TestServiceClient('http://localhost:1234');
 
 var request = new Request();
 request.setMessage(1);
-
-client.calculate(request, {}, (err, response) => {
-  console.log(response.getMessage());
-});
+for (let index = 0; index < 1000; index++) {
+  client.calculate(request, {}, (err, response) => {
+    console.log(response.getMessage());
+  });
+}

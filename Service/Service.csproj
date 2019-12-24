@@ -19,4 +19,12 @@
     <Protobuf Include="**/service.proto" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="testing.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="testing.proto" />
+  </ItemGroup>
+
 </Project>
