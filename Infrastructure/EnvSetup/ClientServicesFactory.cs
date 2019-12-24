@@ -3,6 +3,7 @@ using CrossCutting;
 using Grpc.Core;
 using Infrastructure.Interfaces;
 using Infrastructure.Services;
+using Service;
 using Test;
 
 namespace Infrastructure.EnvSetup
@@ -37,6 +38,15 @@ namespace Infrastructure.EnvSetup
             var channel = new Channel(Defines.PcName, Defines.Port, ChannelCredentials.Insecure);
 
             var client = new ClientService(new TestService.TestServiceClient(channel), channel);
+
+            return client;
+        }
+
+        public TestingClientService GetTestingClientServiceWithoutSsl()
+        {
+            var channel = new Channel(Defines.PcName, Defines.Port, ChannelCredentials.Insecure);
+
+            var client = new TestingClientService(new Tester.TesterClient(channel), channel );
 
             return client;
         }

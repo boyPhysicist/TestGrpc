@@ -34,6 +34,14 @@ namespace Infrastructure.Services
             }
         }
 
+        public async Task<string> CalculateAsync(Request request)
+        {
+                var replay = await _client.CalculateAsync(request);
+
+                return replay.Message.ToString();
+        }
+
+
         public async Task<string> CalculateHuge(HugeRequest request)
         {
             try

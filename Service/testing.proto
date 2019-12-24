@@ -5,16 +5,42 @@ option csharp_namespace = "Service";
 package Test;
 
 service Tester{
-	rpc SingleReplayTest(SingleRequest) returns (SingleReplay);
-	rpc MultipleReplayTest(SingleRequest) returns (stream SingleReplay);
-	rpc MultipleRequestTest(stream SingleRequest) returns (SingleReplay);
-	rpc MultipleRequestReplayTest(stream SingleRequest) returns (SingleReplay);
-}
+	rpc StringTest(StringRequest) returns (StringReplay);
+	rpc IntTest(IntRequest) returns (IntReplay);
+	rpc ByteTest(ByteRequest) returns (ByteReplay);
+	rpc BigByteTest(BigByteRequest) returns (BigByteReplay);
+	}
 
-message SingleRequest{
+message StringRequest{
 	string value = 1;
 }
 
-message SingleReplay{
+message StringReplay{
 	string value = 1;
 }
+
+message IntRequest{
+	int32 value = 1;
+}
+
+message IntReplay{
+	int32 value = 1;
+}
+
+message ByteRequest{
+	bytes value = 1;
+}
+
+message ByteReplay{
+	bytes value = 1;
+}
+
+message BigByteRequest{
+	repeated bytes value = 1;
+}
+
+message BigByteReplay{
+	repeated bytes value = 1;
+}
+
+
