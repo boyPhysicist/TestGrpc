@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CrossCutting;
 using Grpc.Core;
 using Infrastructure.Interfaces;
@@ -44,7 +45,10 @@ namespace Infrastructure.EnvSetup
 
         public TestingClientService GetTestingClientServiceWithoutSsl()
         {
-            var channel = new Channel(Defines.PcName, Defines.Port, ChannelCredentials.Insecure);
+            var opt1 = new ChannelOption (ChannelOptions.MaxReceiveMessageLength, int.MaxValue);
+            var opt2 = new ChannelOption(ChannelOptions.MaxSendMessageLength, int.MaxValue);
+
+            var channel = new Channel(Defines.PcName, Defines.Port, ChannelCredentials.Insecure, new[]{opt1,opt2});
 
             var client = new TestingClientService(new Tester.TesterClient(channel), channel );
 

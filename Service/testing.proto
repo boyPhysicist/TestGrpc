@@ -8,7 +8,7 @@ service Tester{
 	rpc StringTest(StringRequest) returns (StringReplay);
 	rpc IntTest(IntRequest) returns (IntReplay);
 	rpc ByteTest(ByteRequest) returns (ByteReplay);
-	rpc BigByteTest(BigByteRequest) returns (BigByteReplay);
+	rpc BigByteTest(ByteRequest) returns (ByteReplay);
 	}
 
 message StringRequest{
@@ -34,13 +34,3 @@ message ByteRequest{
 message ByteReplay{
 	bytes value = 1;
 }
-
-message BigByteRequest{
-	repeated bytes value = 1;
-}
-
-message BigByteReplay{
-	repeated bytes value = 1;
-}
-
-

@@ -16,10 +16,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9795F4AA-DBD9-41B1-B4A7-387CB51A36DD}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		500mb-file.txt = 500mb-file.txt
 		README.txt = README.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "Benchmark\Benchmark.csproj", "{E29E6AE1-4DA6-47D0-A200-A5E61F7858CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "Benchmark\Benchmark.csproj", "{E29E6AE1-4DA6-47D0-A200-A5E61F7858CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

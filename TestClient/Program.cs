@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection.Metadata;
+using System.Threading.Tasks;
 using Test;
 using CrossCutting;
 using Infrastructure.EnvSetup;
@@ -8,11 +13,15 @@ namespace TestClient
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var clientFabric = new ClientServicesFactory(new CredProvider());
 
-            var clientService = clientFabric.GetClientServiceWithSsl();
+            var clientService = clientFabric.GetClientServiceWithoutSsl();
+
+            var testingClient = clientFabric.GetTestingClientServiceWithoutSsl();
+
+            await testingClient.BigByteTestAsync();
 
             Console.WriteLine(Defines.InputMessage);
 
@@ -57,10 +66,9 @@ namespace TestClient
                 }
 
                 isInputCorrect = true;
-
             }
 
             return result;
         }
-    }
+        }
 }

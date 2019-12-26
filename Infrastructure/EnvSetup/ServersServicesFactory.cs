@@ -35,7 +35,7 @@ namespace Infrastructure.EnvSetup
         {
             var server = new ServerService(new Grpc.Core.Server
             {
-                Services = { TestService.BindService(new ServiceImpl()) },
+                Services = { TestService.BindService(new ServiceImpl()), Tester.BindService(new TestingImpl()) },
                 Ports = { new ServerPort(Defines.HostName, Defines.Port, ServerCredentials.Insecure) }
             });
 
