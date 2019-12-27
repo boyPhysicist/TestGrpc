@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Google.Protobuf;
+﻿using System.Threading.Tasks;
 using Grpc.Core;
 using Service;
 
@@ -29,16 +26,16 @@ namespace Infrastructure.Services
 
         public async Task<StringReplay> StringTestAsync()
         {
-            var result = await _client.StringTestAsync(new StringRequest {Value = "Value"});
+            var result = await _client.StringTestAsync(new StringRequest {Value = new string(new char[1000])});
 
             return result;
         }
 
         public async Task<ByteReplay> ByteTestAsync()
         {
-           var result = await _client.ByteTestAsync(new ByteRequest { Value = ByteString.CopyFrom(BitConverter.GetBytes(2020)) });
+           var result = await _client.BigByteTestAsync(new ByteRequest());
 
-           return result;
+            return result;
         }
 
         public async Task<ByteReplay> BigByteTestAsync()

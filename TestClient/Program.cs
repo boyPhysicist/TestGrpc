@@ -1,38 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection.Metadata;
-using System.Threading.Tasks;
-using Test;
-using CrossCutting;
+﻿using CrossCutting;
 using Infrastructure.EnvSetup;
 using Infrastructure.Providers;
+using System;
+using Test;
 
 namespace TestClient
 {
     class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             var clientFabric = new ClientServicesFactory(new CredProvider());
 
             var clientService = clientFabric.GetClientServiceWithoutSsl();
 
-            var testingClient = clientFabric.GetTestingClientServiceWithoutSsl();
-
-            await testingClient.BigByteTestAsync();
-
             Console.WriteLine(Defines.InputMessage);
 
             var result = _GetInputData();
 
-            var calcResult = clientService.Calculate(new Request {Message = result});
+            var calcResult = clientService.Calculate(new Request { Message = result });
 
             Console.WriteLine(calcResult);
 
             var calcHugeResult = clientService.CalculateHuge(new HugeRequest
-                { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }).Result;
+            { Message = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 } }).Result;
 
             Console.WriteLine(calcHugeResult);
 
@@ -70,5 +61,5 @@ namespace TestClient
 
             return result;
         }
-        }
+    }
 }

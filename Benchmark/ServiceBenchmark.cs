@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using Infrastructure.EnvSetup;
 using Infrastructure.Providers;
 using Infrastructure.Services;
-using Test;
+
 
 namespace Benchmark
 {
@@ -28,7 +25,7 @@ namespace Benchmark
         {
             for (var i = 1; i < 1000; i++)
             {
-                var result = await _clientService.IntTestAsync();
+                await _clientService.IntTestAsync();
             }
         }
 
@@ -37,7 +34,7 @@ namespace Benchmark
         {
             for (var i = 1; i < 1000; i++)
             {
-                var result = await _clientService.ByteTestAsync();
+                await _clientService.ByteTestAsync();
             }
         }
 
@@ -46,14 +43,14 @@ namespace Benchmark
         {
             for (var i = 1; i < 1000; i++)
             {
-                var result = await _clientService.StringTestAsync();
+                await _clientService.StringTestAsync();
             }
         }
 
         [Benchmark]
         public async Task BigByteBench()
         {
-            var result = await _clientService.BigByteTestAsync();
+            await _clientService.BigByteTestAsync();
         }
     }
 }

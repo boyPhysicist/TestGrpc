@@ -1,0 +1,36 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Service";
+
+package Test;
+
+service Tester{
+	rpc StringTest(StringRequest) returns (StringReplay);
+	rpc IntTest(IntRequest) returns (IntReplay);
+	rpc ByteTest(ByteRequest) returns (ByteReplay);
+	rpc BigByteTest(ByteRequest) returns (ByteReplay);
+	}
+
+message StringRequest{
+	string value = 1;
+}
+
+message StringReplay{
+	string value = 1;
+}
+
+message IntRequest{
+	int32 value = 1;
+}
+
+message IntReplay{
+	int32 value = 1;
+}
+
+message ByteRequest{
+	bytes value = 1;
+}
+
+message ByteReplay{
+	bytes value = 1;
+}

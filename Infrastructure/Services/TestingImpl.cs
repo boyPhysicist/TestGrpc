@@ -25,7 +25,7 @@ namespace Infrastructure.Services
 
         public override Task<ByteReplay> BigByteTest(ByteRequest request, ServerCallContext context)
         {
-            return Task.FromResult(new ByteReplay{Value = ByteString.CopyFrom(new byte[1_000_000_000])});
+            return Task.FromResult(new ByteReplay{Value = ByteString.CopyFrom(new byte[100_000_000])});
         }
     }
 }
