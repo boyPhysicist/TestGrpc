@@ -10,7 +10,6 @@ namespace Infrastructure.EnvSetup
 {
     public class ServersServicesFactory : IServersServicesFactory
     {
-
         private readonly ICredentialsProvider _credentialsProvider;
 
         public ServersServicesFactory(ICredentialsProvider credentialsProvider)

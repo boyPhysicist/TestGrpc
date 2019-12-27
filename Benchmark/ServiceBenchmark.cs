@@ -4,7 +4,6 @@ using Infrastructure.EnvSetup;
 using Infrastructure.Providers;
 using Infrastructure.Services;
 
-
 namespace Benchmark
 {
     public class ServiceBenchmark
@@ -17,7 +16,6 @@ namespace Benchmark
             var factory = new ClientServicesFactory(new CredProvider());
 
             _clientService = factory.GetTestingClientServiceWithoutSsl();
-
         }
 
         [Benchmark]
